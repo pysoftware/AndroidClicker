@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Score points"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scoreText"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="64sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/txt"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_circle"
+        android:fontFamily="sans-serif"
+        android:text="TAP"
+        android:textColor="@android:color/white"
+        android:textSize="64sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/progress_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/perSec"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgCursor"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cake" />
+
+                <TextView
+                    android:id="@+id/txtCursor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgCursor"
+                    android:text="Cake"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtCursor"
+                    android:text="+1/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/buyCake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/txtCursor"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgCursor"
+                    android:background="@drawable/bg_btn_shop"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="buy for 100.00"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgCream"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cream" />
+
+                <TextView
+                    android:id="@+id/txtCream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgCream"
+                    android:text="Ice-cream"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtCream"
+                    android:text="+2/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/buyCream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/txtCream"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgCream"
+                    android:background="@drawable/bg_btn_shop"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="buy for 500.00"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgNut"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/nut" />
+
+                <TextView
+                    android:id="@+id/txtNut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgNut"
+                    android:text="Nuts"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtNut"
+                    android:text="+5/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/buyNut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/txtNut"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgNut"
+                    android:background="@drawable/bg_btn_shop"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="buy for 1000.00"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_horizontal"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RelativeLayout
+                android:id="@+id/rel4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgCursorr"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cake" />
+
+                <TextView
+                    android:id="@+id/txtCursorr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgCursorr"
+                    android:text="Cake"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtCursorr"
+                    android:text="+1/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/buyCakee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtCursorr"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgCursorr"
+                    android:text="0"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgIceCream"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cream" />
+
+                <TextView
+                    android:id="@+id/txtIceCream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgIceCream"
+                    android:text="Ice-cream"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtIceCream"
+                    android:text="+2/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/buyIceCream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtIceCream"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgIceCream"
+                    android:text="0"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imgNutt"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/nut" />
+
+                <TextView
+                    android:id="@+id/txtNutt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toRightOf="@id/imgNutt"
+                    android:text="Nuts"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtNutt"
+                    android:text="+5/sec"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/buyNutt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtNutt"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/imgNutt"
+                    android:text="0"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/perSec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn"
+        android:layout_centerHorizontal="true"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/tmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn"
+        android:layout_toRightOf="@id/perSec"
+        android:text="/sec"
+        android:textColor="@android:color/black"
+        android:textSize="36sp" />
+
+</RelativeLayout>
