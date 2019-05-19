@@ -1,2 +1,2 @@
 # AndroidClicker
-Simpler Clicker using Local DB SQLite
+Simple Clicker using Local DB SQLite
